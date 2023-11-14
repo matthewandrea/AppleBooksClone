@@ -15,27 +15,39 @@ struct BookStoreView: View {
         
         NavigationStack {
             
-            Divider()
-                .frame(width: 360)
-            
-            NavigationLink(destination: BrowseSectionsView()) {
-                HStack {
-                    Image(systemName: "text.justifyleft")
-                        .imageScale(.large)
-                    Text("Browse Sections")
-                    
-                    Spacer()
-                    
-                    Image(systemName: "chevron.forward")
-                        .imageScale(.small)
-                }
-            } .padding(.horizontal)
+            VStack {
+                Divider()
+                    .frame(width: 360)
+                
+                NavigationLink(destination: BrowseSectionsView()) {
+                    HStack {
+                        Image(systemName: "text.justifyleft")
+                            .imageScale(.large)
+                        Text("Browse Sections")
+                        
+                        Spacer()
+                        
+                        Image(systemName: "chevron.forward")
+                            .imageScale(.small)
+                    }
+                } 
+                .padding(.horizontal)
                 .padding(.vertical, 5)
+                
+                Divider()
+                    .frame(width: 360)
+            }
             
-            Divider()
-                .frame(width: 360)
-            
-            Spacer()
+            VStack (alignment: .leading) {
+                Text ("New & Trending")
+                    .font(.title3)
+                    .fontWeight(.bold)
+                
+                Text ("Recently released and buzz-y books.")
+                    .font(.subheadline)
+            }
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(.horizontal)
             
             ScrollView(.horizontal, showsIndicators: false) {
                 LazyHGrid(rows: [GridItem(.flexible())], spacing: 16) {
@@ -43,17 +55,16 @@ struct BookStoreView: View {
                         NavigationLink(destination: BookDetailView(book: book)) {
                             Image(book.cover)
                                 .resizable()
-                                .scaledToFit()
-                                .frame(width: 150, height: 200)
-                                .padding()
+                                .aspectRatio(contentMode: .fill)
                         }
                         .buttonStyle(PlainButtonStyle())
                     }
                 }
-                .padding()
             }
-            Spacer()
+            .padding(.horizontal)
+            
             .navigationTitle("Book Store")
+            Spacer()
         }
         
     }
