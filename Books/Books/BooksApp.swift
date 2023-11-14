@@ -9,9 +9,7 @@ import SwiftUI
 
 @main
 struct BooksApp: App {
-    
-   // @Environment(\.colorScheme) var colorScheme
-    
+        
     var body: some Scene {
         WindowGroup {
             
@@ -43,7 +41,6 @@ struct BooksApp: App {
                     }
                 
             }
-           // .accentColor(colorScheme == .dark ? Color.white : Color.black)
             
         }
     }

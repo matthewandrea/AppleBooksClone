@@ -18,6 +18,7 @@
 		34185DF22B028E9F00C74A12 /* BookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34185DF12B028E9F00C74A12 /* BookViewModel.swift */; };
 		34185DF42B028EA700C74A12 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34185DF32B028EA700C74A12 /* Book.swift */; };
 		34859CBB2B02E0CE00ADA66C /* BookDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34859CBA2B02E0CE00ADA66C /* BookDetailView.swift */; };
+		34E282DA2B03928400F1F632 /* BrowseSectionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E282D92B03928400F1F632 /* BrowseSectionsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		34185DF12B028E9F00C74A12 /* BookViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewModel.swift; sourceTree = "<group>"; };
 		34185DF32B028EA700C74A12 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		34859CBA2B02E0CE00ADA66C /* BookDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailView.swift; sourceTree = "<group>"; };
+		34E282D92B03928400F1F632 /* BrowseSectionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseSectionsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 				34185DE22B0289E600C74A12 /* ReadNowView.swift */,
 				34185DE42B0289FC00C74A12 /* LibraryView.swift */,
 				34185DE62B028A1300C74A12 /* BookStoreView.swift */,
+				34E282D92B03928400F1F632 /* BrowseSectionsView.swift */,
 				34185DE82B028A2600C74A12 /* AudiobooksView.swift */,
 				34185DEA2B028A2F00C74A12 /* SearchView.swift */,
 			);
@@ -186,6 +189,7 @@
 				34185DE52B0289FC00C74A12 /* LibraryView.swift in Sources */,
 				34185DE32B0289E600C74A12 /* ReadNowView.swift in Sources */,
 				34185DEB2B028A2F00C74A12 /* SearchView.swift in Sources */,
+				34E282DA2B03928400F1F632 /* BrowseSectionsView.swift in Sources */,
 				34859CBB2B02E0CE00ADA66C /* BookDetailView.swift in Sources */,
 				34185DF42B028EA700C74A12 /* Book.swift in Sources */,
 				34185DF22B028E9F00C74A12 /* BookViewModel.swift in Sources */,
