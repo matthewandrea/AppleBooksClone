@@ -30,7 +30,7 @@ struct BookStoreView: View {
                         Image(systemName: "chevron.forward")
                             .imageScale(.small)
                     }
-                } 
+                }
                 .padding(.horizontal)
                 .padding(.vertical, 5)
                 
@@ -56,14 +56,20 @@ struct BookStoreView: View {
                             Image(book.cover)
                                 .resizable()
                                 .aspectRatio(contentMode: .fill)
+                                .frame(height: 100)
                         }
                         .buttonStyle(PlainButtonStyle())
                     }
                 }
+                .frame(maxHeight: 110)
+                
             }
             .padding(.horizontal)
             
             .navigationTitle("Book Store")
+            .font(.custom("Zapfino",
+                    fixedSize: 34)
+                )
             Spacer()
         }
         
