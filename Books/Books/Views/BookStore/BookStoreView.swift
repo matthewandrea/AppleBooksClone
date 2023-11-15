@@ -67,9 +67,6 @@ struct BookStoreView: View {
             .padding(.horizontal)
             
             .navigationTitle("Book Store")
-            .font(.custom("Zapfino",
-                    fixedSize: 34)
-                )
             Spacer()
         }
         
