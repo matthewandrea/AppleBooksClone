@@ -20,7 +20,7 @@ struct SectionsDetailView: View {
             
             VStack (alignment: .leading) {
                 Text ("Bestsellers")
-                    .font(.title)
+                    .font(.title2)
                     .fontWeight(.bold)
                     .padding(.top, 30)
                     .padding(.bottom, 20)
@@ -35,12 +35,12 @@ struct SectionsDetailView: View {
                             Image(book.cover)
                                 .resizable()
                                 .aspectRatio(contentMode: .fill)
-                                .frame(height: 340)
+                                .frame(height: 320)
                         }
                         .buttonStyle(PlainButtonStyle())
                     }
                 }
-                .frame(maxHeight: 340)
+                .frame(maxHeight: 320)
                 
             }
             .padding(.bottom, 20)
@@ -68,7 +68,7 @@ struct SectionsDetailView: View {
             VStack {
                 VStack (alignment: .leading) {
                     Text ("Have You Read...?")
-                        .font(.title)
+                        .font(.title2)
                         .fontWeight(.bold)
                         .padding(.top, 30)
                         .padding(.bottom, 20)
@@ -83,12 +83,12 @@ struct SectionsDetailView: View {
                                 Image(book.cover)
                                     .resizable()
                                     .aspectRatio(contentMode: .fill)
-                                    .frame(height: 340)
+                                    .frame(height: 320)
                             }
                             .buttonStyle(PlainButtonStyle())
                         }
                     }
-                    .frame(maxHeight: 340)
+                    .frame(maxHeight: 320)
                     
                 }
                 .padding(.bottom, 20)

@@ -47,6 +47,7 @@ struct BookStoreView: View {
                 
                 Text ("Recently released and buzz-y books.")
                     .font(.subheadline)
+                    .padding(.bottom)
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.horizontal)
