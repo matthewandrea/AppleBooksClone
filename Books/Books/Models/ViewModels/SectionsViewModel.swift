@@ -13,7 +13,7 @@ class SectionsViewModel {
         Section(category: "Top Charts", emoji: "list.bullet.rectangle.fill"),
         Section(category: "Special Offers & Free", emoji: "dollarsign"),
         Section(category: "Biography", emoji: "person.fill"),
-        Section(category: "Book in English", emoji: "globe"),
+        Section(category: "Books in English", emoji: "globe"),
         Section(category: "Comics & Graphic Novels", emoji: "pencil.and.scribble"),
         Section(category: "Computing & Internet", emoji: "desktopcomputer"),
         Section(category: "Crime & Thrillers", emoji: "magnifyingglass"),

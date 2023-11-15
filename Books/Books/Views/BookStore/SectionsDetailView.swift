@@ -11,7 +11,7 @@ struct SectionsDetailView: View {
     var category: String
     
     var body: some View {
-        Text("Dettagli della categoria: \(category)")
+        Text("")
             .navigationTitle(category)
     }
 }
