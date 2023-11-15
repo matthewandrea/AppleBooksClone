@@ -38,6 +38,8 @@ struct BookStoreView: View {
                     .frame(width: 360)
             }
             
+            // inserisci i libri in evidenza qui
+            
             VStack (alignment: .leading) {
                 Text ("New & Trending")
                     .font(.title3)
@@ -77,7 +79,7 @@ struct BookStoreView: View {
                 .frame(maxHeight: 110)
                 
             }
-            .padding(.horizontal)
+            .padding(.leading)
             
             .navigationTitle("Book Store")
             Spacer()

@@ -13,15 +13,14 @@ struct SectionsDetailView: View {
     var viewModel = BookViewModel()
     
     var body: some View {
-        
-        NavigationStack {
-            
+
+        ScrollView {
             Divider()
                 .frame(width: 360)
             
             VStack (alignment: .leading) {
                 Text ("Bestsellers")
-                    .font(.title3)
+                    .font(.title)
                     .fontWeight(.bold)
                     .padding(.top, 30)
                     .padding(.bottom, 20)
@@ -45,7 +44,7 @@ struct SectionsDetailView: View {
                 
             }
             .padding(.bottom, 20)
-            .padding(.horizontal)
+            .padding(.leading)
             
             VStack {
                 Divider()
@@ -62,10 +61,57 @@ struct SectionsDetailView: View {
                     }
                 }
                 .padding(.horizontal)
-                .padding(.vertical, 5)
-                
+                .padding(.top)
+                .padding(.bottom, 30)
             }
             
+            VStack {
+                VStack (alignment: .leading) {
+                    Text ("Have You Read...?")
+                        .font(.title)
+                        .fontWeight(.bold)
+                        .padding(.top, 30)
+                        .padding(.bottom, 20)
+                }
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.horizontal)
+                
+                ScrollView(.horizontal, showsIndicators: false) {
+                    LazyHGrid(rows: [GridItem(.flexible())], spacing: 30) {
+                        ForEach(viewModel.books1) { book in
+                            NavigationLink(destination: BookDetailView(book: book)) {
+                                Image(book.cover)
+                                    .resizable()
+                                    .aspectRatio(contentMode: .fill)
+                                    .frame(height: 340)
+                            }
+                            .buttonStyle(PlainButtonStyle())
+                        }
+                    }
+                    .frame(maxHeight: 340)
+                    
+                }
+                .padding(.bottom, 20)
+                .padding(.leading)
+                
+                VStack {
+                    NavigationLink(destination: HaveYouReadView()) {
+                        HStack {
+                            Text("See All")
+                            
+                            Image(systemName: "chevron.forward")
+                                .imageScale(.small)
+                            
+                            Spacer()
+                        }
+                    }
+                    .padding(.horizontal)
+                    .padding(.top, 20)
+                    .padding(.bottom, 40)
+                }
+            }
+            .background(LinearGradient(gradient: Gradient(colors: [Color.blue.opacity(0.8), Color.blue.opacity(0.4)]), startPoint: .top, endPoint: .bottom))
+
             .navigationTitle(category)
             Spacer()
         }
@@ -73,6 +119,10 @@ struct SectionsDetailView: View {
     }
 }
 
-#Preview {
-    SectionsDetailView(category: "Top Charts")
+struct SectionsDetailView_Previews: PreviewProvider {
+    static var previews: some View {
+        NavigationView {
+            SectionsDetailView(category: "Top Charts")
+        }
+    }
 }
