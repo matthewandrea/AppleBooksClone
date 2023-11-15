@@ -51,7 +51,20 @@ struct BookStoreView: View {
             
             ScrollView(.horizontal, showsIndicators: false) {
                 LazyHGrid(rows: [GridItem(.flexible())], spacing: 16) {
-                    ForEach(viewModel.books) { book in
+                    ForEach(viewModel.books1) { book in
+                        NavigationLink(destination: BookDetailView(book: book)) {
+                            Image(book.cover)
+                                .resizable()
+                                .aspectRatio(contentMode: .fill)
+                                .frame(height: 100)
+                        }
+                        .buttonStyle(PlainButtonStyle())
+                    }
+                }
+                .frame(maxHeight: 110)
+                
+                LazyHGrid(rows: [GridItem(.flexible())], spacing: 16) {
+                    ForEach(viewModel.books2) { book in
                         NavigationLink(destination: BookDetailView(book: book)) {
                             Image(book.cover)
                                 .resizable()

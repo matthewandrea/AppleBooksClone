@@ -9,7 +9,7 @@ import SwiftUI
 
 @main
 struct BooksApp: App {
-        
+    
     var body: some Scene {
         WindowGroup {
             
@@ -39,7 +39,6 @@ struct BooksApp: App {
                         Image(systemName: "magnifyingglass")
                         Text("Search")
                     }
-                
             }
             
         }

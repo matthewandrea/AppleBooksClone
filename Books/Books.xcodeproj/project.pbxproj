@@ -21,6 +21,7 @@
 		3475B0FA2B0434E2001474F9 /* SectionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3475B0F92B0434E2001474F9 /* SectionsViewModel.swift */; };
 		34859CBB2B02E0CE00ADA66C /* BookDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34859CBA2B02E0CE00ADA66C /* BookDetailView.swift */; };
 		34A8D8662B04BCCE00A62F19 /* SectionsDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A8D8652B04BCCE00A62F19 /* SectionsDetailView.swift */; };
+		34A8D8692B04E7A300A62F19 /* BestsellersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34A8D8682B04E7A300A62F19 /* BestsellersView.swift */; };
 		34E282DA2B03928400F1F632 /* BrowseSectionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 34E282D92B03928400F1F632 /* BrowseSectionsView.swift */; };
 /* End PBXBuildFile section */
 
@@ -40,6 +41,7 @@
 		3475B0F92B0434E2001474F9 /* SectionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionsViewModel.swift; sourceTree = "<group>"; };
 		34859CBA2B02E0CE00ADA66C /* BookDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailView.swift; sourceTree = "<group>"; };
 		34A8D8652B04BCCE00A62F19 /* SectionsDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionsDetailView.swift; sourceTree = "<group>"; };
+		34A8D8682B04E7A300A62F19 /* BestsellersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestsellersView.swift; sourceTree = "<group>"; };
 		34E282D92B03928400F1F632 /* BrowseSectionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrowseSectionsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -128,6 +130,7 @@
 				34185DE62B028A1300C74A12 /* BookStoreView.swift */,
 				34E282D92B03928400F1F632 /* BrowseSectionsView.swift */,
 				34A8D8652B04BCCE00A62F19 /* SectionsDetailView.swift */,
+				34A8D8682B04E7A300A62F19 /* BestsellersView.swift */,
 			);
 			path = BookStore;
 			sourceTree = "<group>";
@@ -205,6 +208,7 @@
 				3475B0F82B043469001474F9 /* Sections.swift in Sources */,
 				34185DE92B028A2600C74A12 /* AudiobooksView.swift in Sources */,
 				34185DE52B0289FC00C74A12 /* LibraryView.swift in Sources */,
+				34A8D8692B04E7A300A62F19 /* BestsellersView.swift in Sources */,
 				34185DE32B0289E600C74A12 /* ReadNowView.swift in Sources */,
 				34185DEB2B028A2F00C74A12 /* SearchView.swift in Sources */,
 				34E282DA2B03928400F1F632 /* BrowseSectionsView.swift in Sources */,
