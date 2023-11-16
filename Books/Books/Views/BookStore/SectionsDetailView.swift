@@ -36,6 +36,7 @@ struct SectionsDetailView: View {
                                 .resizable()
                                 .aspectRatio(contentMode: .fill)
                                 .frame(height: 320)
+                                .padding(.leading)
                         }
                         .buttonStyle(PlainButtonStyle())
                     }
@@ -44,7 +45,6 @@ struct SectionsDetailView: View {
                 
             }
             .padding(.bottom, 20)
-            .padding(.leading)
             
             VStack {
                 Divider()
@@ -83,16 +83,16 @@ struct SectionsDetailView: View {
                                 Image(book.cover)
                                     .resizable()
                                     .aspectRatio(contentMode: .fill)
-                                    .frame(height: 320)
+                                    .frame(height: 220)
+                                    .padding(.leading)
                             }
                             .buttonStyle(PlainButtonStyle())
                         }
                     }
-                    .frame(maxHeight: 320)
+                    .frame(maxHeight: 220)
                     
                 }
                 .padding(.bottom, 20)
-                .padding(.leading)
                 
                 VStack {
                     NavigationLink(destination: HaveYouReadView()) {

@@ -10,7 +10,7 @@ import SwiftUI
 struct BestsellersView: View {
     var body: some View {
         Text("")
-            .navigationTitle("Bestsellers")
+            .navigationBarTitle("Bestsellers", displayMode: .inline)
     }
 }
 

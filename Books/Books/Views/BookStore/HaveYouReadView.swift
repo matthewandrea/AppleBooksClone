@@ -10,7 +10,7 @@ import SwiftUI
 struct HaveYouReadView: View {
     var body: some View {
         Text("")
-            .navigationTitle("Have You Read...?")
+            .navigationBarTitle("Have You Read...?", displayMode: .inline)
     }
 }
 
