@@ -15,6 +15,9 @@ struct BookDetailView: View {
         
         VStack {
             
+            Image("\(book.cover)")
+                .resizable()
+                .scaledToFit()
             
             Text("\(book.title)")
                 .font(.title)
@@ -32,7 +35,7 @@ struct BookDetailView: View {
 
 #Preview {
     BookDetailView(book:
-                    Book(title: "The Picture of Dorian Gray", author: "Oscar Wilde", cover: "doriangray")
+                    Book(title: "The Little Prince", author: "Antoine de Saint-Exupéry", cover: "elprincipito")
     )
 }
 

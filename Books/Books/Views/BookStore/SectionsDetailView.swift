@@ -19,7 +19,7 @@ struct SectionsDetailView: View {
                 .frame(width: 360)
             
             VStack (alignment: .leading) {
-                Text ("Bestsellers")
+                Text ("New Releases")
                     .font(.title2)
                     .fontWeight(.bold)
                     .padding(.top, 30)
@@ -50,7 +50,7 @@ struct SectionsDetailView: View {
                 Divider()
                     .frame(width: 360)
                 
-                NavigationLink(destination: BestsellersView()) {
+                NavigationLink(destination: NewReleasesView()) {
                     HStack {
                         Text("See All")
                         
@@ -70,6 +70,7 @@ struct SectionsDetailView: View {
                     Text ("Have You Read...?")
                         .font(.title2)
                         .fontWeight(.bold)
+                        .foregroundColor(Color.white)
                         .padding(.top, 30)
                         .padding(.bottom, 20)
                 }
@@ -98,9 +99,11 @@ struct SectionsDetailView: View {
                     NavigationLink(destination: HaveYouReadView()) {
                         HStack {
                             Text("See All")
+                                .foregroundColor(Color.white)
                             
                             Image(systemName: "chevron.forward")
                                 .imageScale(.small)
+                                .foregroundColor(Color.white)
                             
                             Spacer()
                         }
@@ -110,7 +113,7 @@ struct SectionsDetailView: View {
                     .padding(.bottom, 40)
                 }
             }
-            .background(LinearGradient(gradient: Gradient(colors: [Color.blue.opacity(0.8), Color.blue.opacity(0.4)]), startPoint: .top, endPoint: .bottom))
+            .background(LinearGradient(gradient: Gradient(colors: [Color.haveYouRead, Color.haveYouRead.opacity(0.6)]), startPoint: .top, endPoint: .bottom))
 
             .navigationTitle(category)
             Spacer()
