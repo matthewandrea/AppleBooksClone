@@ -9,11 +9,14 @@ import SwiftUI
 
 struct SectionsDetailView: View {
     
+    @State private var isBookDetailPresented = false
+    @State private var selectedBook: Book?
+    
     var category: String
     var viewModel = BookViewModel()
     
     var body: some View {
-
+        
         ScrollView {
             Divider()
                 .frame(width: 360)
@@ -31,7 +34,10 @@ struct SectionsDetailView: View {
             ScrollView(.horizontal, showsIndicators: false) {
                 LazyHGrid(rows: [GridItem(.flexible())], spacing: 30) {
                     ForEach(viewModel.books2) { book in
-                        NavigationLink(destination: BookDetailView(book: book)) {
+                        Button(action: {
+                            selectedBook = book
+                            isBookDetailPresented = true
+                        }) {
                             Image(book.cover)
                                 .resizable()
                                 .aspectRatio(contentMode: .fill)
@@ -56,6 +62,7 @@ struct SectionsDetailView: View {
                         
                         Image(systemName: "chevron.forward")
                             .imageScale(.small)
+                            .foregroundColor(.gray)
                         
                         Spacer()
                     }
@@ -80,7 +87,10 @@ struct SectionsDetailView: View {
                 ScrollView(.horizontal, showsIndicators: false) {
                     LazyHGrid(rows: [GridItem(.flexible())], spacing: 30) {
                         ForEach(viewModel.books1) { book in
-                            NavigationLink(destination: BookDetailView(book: book)) {
+                            Button(action: {
+                                selectedBook = book
+                                isBookDetailPresented = true
+                            }) {
                                 Image(book.cover)
                                     .resizable()
                                     .aspectRatio(contentMode: .fill)
@@ -103,8 +113,8 @@ struct SectionsDetailView: View {
                             
                             Image(systemName: "chevron.forward")
                                 .imageScale(.small)
-                                .foregroundColor(Color.white)
-                            
+                                .foregroundColor(.gray)
+
                             Spacer()
                         }
                     }
@@ -114,11 +124,15 @@ struct SectionsDetailView: View {
                 }
             }
             .background(LinearGradient(gradient: Gradient(colors: [Color.haveYouRead, Color.haveYouRead.opacity(0.6)]), startPoint: .top, endPoint: .bottom))
-
+            
             .navigationTitle(category)
             Spacer()
         }
-        
+        .sheet(isPresented: $isBookDetailPresented) {
+            if let selectedBook = selectedBook {
+                BookDetailView(book: selectedBook)
+            }
+        }
     }
 }
 
