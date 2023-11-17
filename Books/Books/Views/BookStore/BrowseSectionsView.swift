@@ -27,7 +27,7 @@ struct BrowseSectionsView: View {
                     }
                 }
 
-                Text("GENERES")
+                Text("GENRES")
                     .font(.subheadline)
                     .padding(.vertical, 16)
 
