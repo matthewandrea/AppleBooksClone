@@ -56,7 +56,9 @@ struct SectionsDetailView: View {
                 Divider()
                     .frame(width: 360)
                 
-                NavigationLink(destination: NewReleasesView()) {
+                Button {
+                    // No action
+                } label: {
                     HStack {
                         Text("See All")
                         
@@ -106,21 +108,23 @@ struct SectionsDetailView: View {
                 .padding(.bottom, 20)
                 
                 VStack {
-                    NavigationLink(destination: HaveYouReadView()) {
+                    Button {
+                        // No action
+                    } label: {
                         HStack {
                             Text("See All")
-                                .foregroundColor(Color.white)
+                                .foregroundColor(.white)
                             
                             Image(systemName: "chevron.forward")
                                 .imageScale(.small)
                                 .foregroundColor(.gray)
-
+                            
                             Spacer()
                         }
                     }
                     .padding(.horizontal)
-                    .padding(.top, 20)
-                    .padding(.bottom, 40)
+                    .padding(.top)
+                    .padding(.bottom, 30)
                 }
             }
             .background(LinearGradient(gradient: Gradient(colors: [Color.haveYouRead, Color.haveYouRead.opacity(0.6)]), startPoint: .top, endPoint: .bottom))
