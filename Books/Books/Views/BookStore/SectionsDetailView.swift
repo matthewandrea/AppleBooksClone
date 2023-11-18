@@ -9,11 +9,9 @@ import SwiftUI
 
 struct SectionsDetailView: View {
     
-    @State private var isBookDetailPresented = false
     @State private var selectedBook: Book?
     
     var category: String
-    var viewModel = BookViewModel()
     
     var body: some View {
         
@@ -33,10 +31,9 @@ struct SectionsDetailView: View {
             
             ScrollView(.horizontal, showsIndicators: false) {
                 LazyHGrid(rows: [GridItem(.flexible())], spacing: 30) {
-                    ForEach(viewModel.books2) { book in
+                    ForEach(BookViewModel.books2) { book in
                         Button(action: {
                             selectedBook = book
-                            isBookDetailPresented = true
                         }) {
                             Image(book.cover)
                                 .resizable()
@@ -88,10 +85,9 @@ struct SectionsDetailView: View {
                 
                 ScrollView(.horizontal, showsIndicators: false) {
                     LazyHGrid(rows: [GridItem(.flexible())], spacing: 30) {
-                        ForEach(viewModel.books1) { book in
+                        ForEach(BookViewModel.books1) { book in
                             Button(action: {
                                 selectedBook = book
-                                isBookDetailPresented = true
                             }) {
                                 Image(book.cover)
                                     .resizable()
@@ -132,10 +128,8 @@ struct SectionsDetailView: View {
             .navigationTitle(category)
             Spacer()
         }
-        .sheet(isPresented: $isBookDetailPresented) {
-            if let selectedBook = selectedBook {
-                BookDetailView(book: selectedBook)
-            }
+        .sheet(item: $selectedBook) { selectedBook in
+                    BookDetailView(book: selectedBook)
         }
     }
 }

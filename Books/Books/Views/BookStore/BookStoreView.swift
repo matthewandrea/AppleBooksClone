@@ -9,11 +9,8 @@ import SwiftUI
 
 struct BookStoreView: View {
     
-    @State private var isBookDetailPresented = false
     @State private var selectedBook: Book?
-    
-    var viewModel = BookViewModel()
-    
+        
     var body: some View {
         
         NavigationStack {
@@ -55,10 +52,9 @@ struct BookStoreView: View {
             
             ScrollView(.horizontal, showsIndicators: false) {
                 LazyHGrid(rows: [GridItem(.flexible())], spacing: 5) {
-                    ForEach(viewModel.books1) { book in
+                    ForEach(BookViewModel.books1) { book in
                         Button(action: {
                             selectedBook = book
-                            isBookDetailPresented = true
                         }) {
                             Image(book.cover)
                                 .resizable()
@@ -72,10 +68,9 @@ struct BookStoreView: View {
                 .frame(maxHeight: 110)
                 
                 LazyHGrid(rows: [GridItem(.flexible())], spacing: 3) {
-                    ForEach(viewModel.books2) { book in
+                    ForEach(BookViewModel.books2) { book in
                         Button(action: {
                             selectedBook = book
-                            isBookDetailPresented = true
                         }) {
                             Image(book.cover)
                                 .resizable()
@@ -116,13 +111,11 @@ struct BookStoreView: View {
             .navigationTitle("Book Store")
             Spacer()
         }
-        .sheet(isPresented: $isBookDetailPresented) {
-            if let selectedBook = selectedBook {
-                BookDetailView(book: selectedBook)
+        .sheet(item: $selectedBook) { selectedBook in
+                    BookDetailView(book: selectedBook)
             }
         }
     }
-}
 
 struct BookStoreView_Previews: PreviewProvider {
     static var previews: some View {
