@@ -9,6 +9,11 @@ import SwiftUI
 
 struct BookStoreView: View {
     
+    init() {
+            UINavigationBar.appearance().largeTitleTextAttributes = [.font : UIFont(name: "Georgia-Bold", size: 34)!]
+            UINavigationBar.appearance().titleTextAttributes = [.font : UIFont(name: "Georgia-Bold", size: 20)!]
+        }
+    
     @State private var selectedBook: Book?
         
     var body: some View {
@@ -40,8 +45,7 @@ struct BookStoreView: View {
             
             VStack (alignment: .leading) {
                 Text ("New & Trending")
-                    .font(.title3)
-                    .fontWeight(.bold)
+                    .font(Font.custom("Georgia-Bold", size: 22))
                 
                 Text ("Recently released and buzz-y books.")
                     .font(.subheadline)
@@ -49,6 +53,7 @@ struct BookStoreView: View {
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.horizontal)
+            .padding(.top)
             
             ScrollView(.horizontal, showsIndicators: false) {
                 LazyHGrid(rows: [GridItem(.flexible())], spacing: 5) {

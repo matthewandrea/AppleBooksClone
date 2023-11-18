@@ -9,6 +9,11 @@ import SwiftUI
 
 struct BrowseSectionsView: View {
     
+    init() {
+            UINavigationBar.appearance().largeTitleTextAttributes = [.font : UIFont(name: "Georgia-Bold", size: 34)!]
+            UINavigationBar.appearance().titleTextAttributes = [.font : UIFont(name: "Georgia-Bold", size: 20)!]
+        }
+    
     var viewModel = SectionsViewModel()
     
     var body: some View {

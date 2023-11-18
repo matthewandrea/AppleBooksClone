@@ -9,6 +9,13 @@ import SwiftUI
 
 struct SectionsDetailView: View {
     
+    init(category: String) {
+            self.category = category
+            
+            UINavigationBar.appearance().largeTitleTextAttributes = [.font : UIFont(name: "Georgia-Bold", size: 34)!]
+            UINavigationBar.appearance().titleTextAttributes = [.font : UIFont(name: "Georgia-Bold", size: 20)!]
+        }
+    
     @State private var selectedBook: Book?
     
     var category: String
@@ -21,8 +28,7 @@ struct SectionsDetailView: View {
             
             VStack (alignment: .leading) {
                 Text ("New Releases")
-                    .font(.title2)
-                    .fontWeight(.bold)
+                    .font(Font.custom("Georgia-Bold", size: 22))
                     .padding(.top, 30)
                     .padding(.bottom, 20)
             }
@@ -74,8 +80,7 @@ struct SectionsDetailView: View {
             VStack {
                 VStack (alignment: .leading) {
                     Text ("Have You Read...?")
-                        .font(.title2)
-                        .fontWeight(.bold)
+                        .font(Font.custom("Georgia-Bold", size: 22))
                         .foregroundColor(Color.white)
                         .padding(.top, 30)
                         .padding(.bottom, 20)

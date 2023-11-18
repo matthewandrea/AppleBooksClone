@@ -40,8 +40,7 @@ struct BookDetailView: View {
                     .padding(.bottom, 10)
                 
                 Text("\(book.title)")
-                    .font(.title2)
-                    .bold()
+                    .font(Font.custom("Georgia-Bold", size: 22))
                 
                 Button {
                     // No action
