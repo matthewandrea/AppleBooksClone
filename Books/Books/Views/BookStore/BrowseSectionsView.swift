@@ -9,6 +9,8 @@ import SwiftUI
 
 struct BrowseSectionsView: View {
     
+    @Environment(\.presentationMode) var presentationMode: Binding<PresentationMode>
+
     init() {
         UINavigationBar.appearance().largeTitleTextAttributes = [.font : UIFont(name: "Georgia-Bold", size: 34)!]
         UINavigationBar.appearance().titleTextAttributes = [.font : UIFont(name: "Georgia-Bold", size: 19)!]
@@ -51,8 +53,22 @@ struct BrowseSectionsView: View {
                 }
             }
             .listStyle(InsetListStyle())
-        }
-        .navigationTitle("Browse Sections")
+            .navigationBarBackButtonHidden(true)
+                        .navigationBarItems(leading:
+                            Button(action: {
+                                self.presentationMode.wrappedValue.dismiss()
+                            }) {
+                                HStack {
+                                    Image(systemName: "chevron.backward")
+                                        .font(Font.system(size: 16).weight(.bold))
+                                        .padding(.leading, -8)
+                                    Text("Book Store")
+                                        .padding(.leading, -2)
+                                }
+                            }
+                        )
+                    }
+                    .navigationTitle("Browse Sections")
     }
 }
 
