@@ -10,9 +10,9 @@ import SwiftUI
 struct BrowseSectionsView: View {
     
     init() {
-            UINavigationBar.appearance().largeTitleTextAttributes = [.font : UIFont(name: "Georgia-Bold", size: 34)!]
-            UINavigationBar.appearance().titleTextAttributes = [.font : UIFont(name: "Georgia-Bold", size: 19)!]
-        }
+        UINavigationBar.appearance().largeTitleTextAttributes = [.font : UIFont(name: "Georgia-Bold", size: 34)!]
+        UINavigationBar.appearance().titleTextAttributes = [.font : UIFont(name: "Georgia-Bold", size: 19)!]
+    }
     
     var viewModel = SectionsViewModel()
     
@@ -31,13 +31,13 @@ struct BrowseSectionsView: View {
                         .frame(height: 40)
                     }
                 }
-
+                
                 Text("GENRES")
                     .font(.caption2)
                     .fontWeight(.bold)
                     .foregroundColor(.gray)
                     .padding(.vertical, 10)
-
+                
                 ForEach(viewModel.sections.dropFirst(2)) { section in
                     NavigationLink(destination: SectionsDetailView(category: section.category)) {
                         HStack {

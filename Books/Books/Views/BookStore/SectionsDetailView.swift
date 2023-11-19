@@ -10,11 +10,11 @@ import SwiftUI
 struct SectionsDetailView: View {
     
     init(category: String) {
-            self.category = category
-            
-            UINavigationBar.appearance().largeTitleTextAttributes = [.font : UIFont(name: "Georgia-Bold", size: 34)!]
-            UINavigationBar.appearance().titleTextAttributes = [.font : UIFont(name: "Georgia-Bold", size: 19)!]
-        }
+        self.category = category
+        
+        UINavigationBar.appearance().largeTitleTextAttributes = [.font : UIFont(name: "Georgia-Bold", size: 34)!]
+        UINavigationBar.appearance().titleTextAttributes = [.font : UIFont(name: "Georgia-Bold", size: 19)!]
+    }
     
     @State private var selectedBook: Book?
     
@@ -134,7 +134,7 @@ struct SectionsDetailView: View {
             Spacer()
         }
         .sheet(item: $selectedBook) { selectedBook in
-                    BookDetailView(book: selectedBook)
+            BookDetailView(book: selectedBook)
         }
     }
 }
