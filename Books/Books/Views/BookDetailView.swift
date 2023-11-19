@@ -26,7 +26,7 @@ struct BookDetailView: View {
                 }) {
                     Image(systemName: "xmark.circle.fill")
                         .font(.system(size: 20))
-                        .foregroundColor(.gray)
+                        .foregroundColor(.secondary)
                 }
             }
             .padding(.top, 20)
@@ -102,7 +102,7 @@ struct BookDetailView: View {
                         .foregroundColor(.white)
                         .padding(13)
                         .frame(maxWidth: .infinity)
-                        .background(colorScheme == .dark ? Color.gray : Color.black)
+                        .background(colorScheme == .dark ? Color.white.opacity(0.2) : Color.black)
                         .cornerRadius(40)
                 }
                 .padding(.horizontal)
@@ -124,7 +124,7 @@ struct BookDetailView: View {
                         .frame(maxWidth: 180)
                         .overlay(
                             RoundedRectangle(cornerRadius: 40)
-                                .stroke(colorScheme == .dark ? Color.gray : Color.black, lineWidth: 1)
+                                .stroke(colorScheme == .dark ? Color.white.opacity(0.2) : Color.black, lineWidth: 1)
                         )
                     }
                     
@@ -144,7 +144,7 @@ struct BookDetailView: View {
                         .frame(maxWidth: 140)
                         .overlay(
                             RoundedRectangle(cornerRadius: 40)
-                                .stroke(colorScheme == .dark ? Color.gray : Color.black, lineWidth: 1)
+                                .stroke(colorScheme == .dark ? Color.white.opacity(0.2) : Color.black, lineWidth: 1)
                         )
                     }
                 }
