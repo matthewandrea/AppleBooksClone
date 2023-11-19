@@ -43,14 +43,20 @@ struct BookStoreView: View {
                 .padding(.vertical, 5)
             }
             
-            ScrollView(.horizontal, showsIndicators: false) {
-                LazyHGrid(rows: [GridItem(.flexible())]) {
-                    ForEach(BooksViewModel.books1) { book in
-                        NewBooksView(book1: book)
-                            .padding(.trailing, 10)
+                ScrollView(.horizontal, showsIndicators: false) {
+                    LazyHGrid(rows: [GridItem(.flexible())]) {
+                        ForEach(BooksViewModel.books1) { book in
+                            Button(action: {
+                                selectedBook = book
+                            }) {
+                                NewBooksView(book1: book)
+                            }
+                            .buttonStyle(PlainButtonStyle())
+                        }
                     }
+                    .padding(.leading, 15)
                 }
-            }
+
             
             VStack (alignment: .leading) {
                 Text ("New & Trending")

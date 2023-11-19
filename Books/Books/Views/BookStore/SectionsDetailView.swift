@@ -128,7 +128,7 @@ struct SectionsDetailView: View {
                     .padding(.bottom, 30)
                 }
             }
-            .background(LinearGradient(gradient: Gradient(colors: [Color.haveYouRead, Color.haveYouRead.opacity(0.6)]), startPoint: .top, endPoint: .bottom))
+            .background(LinearGradient(gradient: Gradient(colors: [Color("MyColor"), Color("MyColor").opacity(0.6)]), startPoint: .top, endPoint: .bottom))
             
             .navigationTitle(category)
             Spacer()
