@@ -16,7 +16,7 @@ struct NewBooksView: View {
         ZStack {
             VStack (alignment: .leading) {
                 Divider()
-                    .padding(.top, 5)
+                    .padding(.top, 2)
                 
                 VStack (alignment: .leading) {
                     Text("NEW")
