@@ -9,7 +9,7 @@ import SwiftUI
 
 struct NewBooksView: View {
     
-    var book1: Book
+    var book3: Book
     
     var body: some View {
         
@@ -24,11 +24,11 @@ struct NewBooksView: View {
                         .fontWeight(.bold)
                         .frame(maxWidth: .infinity, alignment: .leading)
                     
-                    Text(book1.title)
+                    Text(book3.title)
                         .font(Font.custom("Georgia-Bold", size: 22))
                         .frame(maxWidth: .infinity, alignment: .leading)
                     
-                    Text(book1.author)
+                    Text(book3.author)
                         .font(Font.custom("Georgia-Normal", size: 20))
                         .foregroundColor(.gray)
                         .padding(.bottom)
@@ -41,7 +41,7 @@ struct NewBooksView: View {
                         .fill(Color("MyColor").opacity(0.8))
                         .cornerRadius(20)
                         .overlay(
-                            Image(book1.cover)
+                            Image(book3.cover)
                                 .resizable()
                                 .scaledToFit()
                                 .frame(height: 180)
@@ -55,6 +55,6 @@ struct NewBooksView: View {
 
 
 #Preview {
-    let book1 = Book(title: "The Little Prince", author: "Antoine de Saint-Exupéry", cover: "elprincipito")
-    return NewBooksView(book1: book1)
+    let book3 = Book(title: "The True Story of Ah Q", author: "Lu Xun", cover: "ahq")
+    return NewBooksView(book3: book3)
 }

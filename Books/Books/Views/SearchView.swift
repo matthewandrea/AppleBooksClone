@@ -77,6 +77,7 @@ struct SearchView: View {
         } else {
             return BooksViewModel.books1.filter { $0.title.localizedCaseInsensitiveContains(searchText) || $0.author.localizedCaseInsensitiveContains(searchText) }
             + BooksViewModel.books2.filter { $0.title.localizedCaseInsensitiveContains(searchText) || $0.author.localizedCaseInsensitiveContains(searchText) }
+            + BooksViewModel.books3.filter { $0.title.localizedCaseInsensitiveContains(searchText) || $0.author.localizedCaseInsensitiveContains(searchText) }
         }
     }
 }

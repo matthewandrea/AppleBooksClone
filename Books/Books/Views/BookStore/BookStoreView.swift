@@ -46,11 +46,11 @@ struct BookStoreView: View {
                 
                 ScrollView(.horizontal, showsIndicators: false) {
                     LazyHGrid(rows: [GridItem(.flexible())]) {
-                        ForEach(BooksViewModel.books1) { book in
+                        ForEach(BooksViewModel.books3) { book in
                             Button(action: {
                                 selectedBook = book
                             }) {
-                                NewBooksView(book1: book)
+                                NewBooksView(book3: book)
                             }
                             .buttonStyle(PlainButtonStyle())
                         }

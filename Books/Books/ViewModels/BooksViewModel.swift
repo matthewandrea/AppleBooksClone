@@ -26,4 +26,10 @@ struct BooksViewModel {
         Book(title: "Animal Farm", author: "George Orwell", cover: "animalfarm"),
         Book(title: "Pride and Prejudice", author: "Jane Austen", cover: "prideandprejudice")
     ]
+    
+    static var books3 = [
+        Book(title: "The True Story of Ah Q", author: "Lu Xun", cover: "ahq"),
+        Book(title: "Genji Monogatari", author: "Murasaki Shikibu", cover: "genji"),
+        Book(title: "Dhola Maru", author: "Gayatri Madan Dutt", cover: "dholamaru"),
+    ]
 }
