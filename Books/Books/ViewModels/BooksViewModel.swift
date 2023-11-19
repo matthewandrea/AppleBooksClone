@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct BookViewModel {
+struct BooksViewModel {
 
     static var books1 = [
         Book(title: "The Little Prince", author: "Antoine de Saint-Exupéry", cover: "elprincipito"),

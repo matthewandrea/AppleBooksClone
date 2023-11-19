@@ -10,15 +10,18 @@ import SwiftUI
 struct BookStoreView: View {
     
     init() {
-            UINavigationBar.appearance().largeTitleTextAttributes = [.font : UIFont(name: "Georgia-Bold", size: 34)!]
-            UINavigationBar.appearance().titleTextAttributes = [.font : UIFont(name: "Georgia-Bold", size: 19)!]
-        }
+        UINavigationBar.appearance().largeTitleTextAttributes = [.font : UIFont(name: "Georgia-Bold", size: 34)!]
+        UINavigationBar.appearance().titleTextAttributes = [.font : UIFont(name: "Georgia-Bold", size: 19)!]
+    }
     
     @State private var selectedBook: Book?
-        
+    
+    var bookVM = BooksViewModel()
+    
     var body: some View {
         
         NavigationStack {
+            ScrollView {
             VStack {
                 Divider()
                     .frame(width: 360)
@@ -38,9 +41,15 @@ struct BookStoreView: View {
                 }
                 .padding(.horizontal)
                 .padding(.vertical, 5)
-                
-                Divider()
-                    .frame(width: 360)
+            }
+            
+            ScrollView(.horizontal, showsIndicators: false) {
+                LazyHGrid(rows: [GridItem(.flexible())]) {
+                    ForEach(BooksViewModel.books1) { book in
+                        NewBooksView(book1: book)
+                            .padding(.trailing, 10)
+                    }
+                }
             }
             
             VStack (alignment: .leading) {
@@ -49,15 +58,16 @@ struct BookStoreView: View {
                 
                 Text ("Recently released and buzz-y books.")
                     .font(.subheadline)
+                    .foregroundColor(.gray)
                     .padding(.bottom)
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.horizontal)
-            .padding(.top)
+            .padding(.top, 40)
             
             ScrollView(.horizontal, showsIndicators: false) {
                 LazyHGrid(rows: [GridItem(.flexible())], spacing: 5) {
-                    ForEach(BookViewModel.books1) { book in
+                    ForEach(BooksViewModel.books1) { book in
                         Button(action: {
                             selectedBook = book
                         }) {
@@ -73,7 +83,7 @@ struct BookStoreView: View {
                 .frame(maxHeight: 110)
                 
                 LazyHGrid(rows: [GridItem(.flexible())], spacing: 3) {
-                    ForEach(BookViewModel.books2) { book in
+                    ForEach(BooksViewModel.books2) { book in
                         Button(action: {
                             selectedBook = book
                         }) {
@@ -114,13 +124,13 @@ struct BookStoreView: View {
             }
             
             .navigationTitle("Book Store")
-            Spacer()
-        }
-        .sheet(item: $selectedBook) { selectedBook in
-                    BookDetailView(book: selectedBook)
-            }
         }
     }
+        .sheet(item: $selectedBook) { selectedBook in
+            BookDetailView(book: selectedBook)
+        }
+    }
+}
 
 struct BookStoreView_Previews: PreviewProvider {
     static var previews: some View {

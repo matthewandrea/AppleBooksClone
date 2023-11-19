@@ -36,8 +36,8 @@ struct SectionsDetailView: View {
             .padding(.horizontal)
             
             ScrollView(.horizontal, showsIndicators: false) {
-                LazyHGrid(rows: [GridItem(.flexible())], spacing: 30) {
-                    ForEach(BookViewModel.books2) { book in
+                LazyHGrid(rows: [GridItem(.flexible())], spacing: 10) {
+                    ForEach(BooksViewModel.books2) { book in
                         Button(action: {
                             selectedBook = book
                         }) {
@@ -89,8 +89,8 @@ struct SectionsDetailView: View {
                 .padding(.horizontal)
                 
                 ScrollView(.horizontal, showsIndicators: false) {
-                    LazyHGrid(rows: [GridItem(.flexible())], spacing: 30) {
-                        ForEach(BookViewModel.books1) { book in
+                    LazyHGrid(rows: [GridItem(.flexible())], spacing: 10) {
+                        ForEach(BooksViewModel.books1) { book in
                             Button(action: {
                                 selectedBook = book
                             }) {

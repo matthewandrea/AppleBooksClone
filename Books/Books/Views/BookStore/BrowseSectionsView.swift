@@ -33,8 +33,10 @@ struct BrowseSectionsView: View {
                 }
 
                 Text("GENRES")
-                    .font(.subheadline)
-                    .padding(.vertical, 16)
+                    .font(.caption2)
+                    .fontWeight(.bold)
+                    .foregroundColor(.gray)
+                    .padding(.vertical, 10)
 
                 ForEach(viewModel.sections.dropFirst(2)) { section in
                     NavigationLink(destination: SectionsDetailView(category: section.category)) {
