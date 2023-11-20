@@ -60,14 +60,14 @@ struct BookStoreView: View {
                 }
                 .background(
                     colorScheme == .light ?
-                        LinearGradient(
-                            gradient: Gradient(colors: [
-                                Color.white,
-                                Color.gray.opacity(0.4)
-                            ]),
-                            startPoint: .top,
-                            endPoint: .bottom
-                        ) :
+                    LinearGradient(
+                        gradient: Gradient(colors: [
+                            Color.white,
+                            Color.gray.opacity(0.4)
+                        ]),
+                        startPoint: .top,
+                        endPoint: .bottom
+                    ) :
                         LinearGradient(
                             gradient: Gradient(colors: [
                                 Color.clear,

@@ -10,6 +10,8 @@ import SwiftUI
 struct SectionsDetailView: View {
     
     init(category: String) {
+        UILabel.appearance(whenContainedInInstancesOf: [UINavigationBar.self]).adjustsFontSizeToFitWidth = true
+        
         self.category = category
         
         UINavigationBar.appearance().largeTitleTextAttributes = [.font : UIFont(name: "Georgia-Bold", size: 34)!]
