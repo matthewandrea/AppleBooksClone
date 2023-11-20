@@ -19,11 +19,11 @@ struct SectionsDetailView: View {
     @State private var selectedBook: Book?
     
     var filteredBooks1: [Book] {
-            return BooksViewModel.books1.filter { $0.category == category }
+        return BooksViewModel.books1.filter { $0.categories.contains(category) }
         }
 
         var filteredBooks2: [Book] {
-            return BooksViewModel.books2.filter { $0.category == category }
+            return BooksViewModel.books2.filter { $0.categories.contains(category) }
         }
     
     var category: String

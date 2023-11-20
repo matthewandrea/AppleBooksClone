@@ -162,7 +162,7 @@ struct BookDetailView: View {
 
 #Preview {
     BookDetailView(book:
-                    Book(title: "The Little Prince", author: "Antoine de Saint-Exupéry", cover: "elprincipito", category: "Top Charts")
+                    Book(title: "The Little Prince", author: "Antoine de Saint-Exupéry", cover: "elprincipito", categories: ["Top Charts"])
     )
 }
 
