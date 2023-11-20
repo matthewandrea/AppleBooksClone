@@ -64,8 +64,8 @@ struct BookDetailView: View {
                             Image(systemName: "star")
                         }
                         .font(.system(size: 12))
-                        
                         .padding(.bottom, 2)
+                        
                         Text("698 Ratings")
                             .font(.system(size: 10))
                             .foregroundColor(.gray)
@@ -88,7 +88,6 @@ struct BookDetailView: View {
                                 .font(.system(size: 27))
                         }
                     }
-                    
                 }
                 .padding(.vertical, 10)
                 .padding(.horizontal)
@@ -163,7 +162,7 @@ struct BookDetailView: View {
 
 #Preview {
     BookDetailView(book:
-                    Book(title: "The Little Prince", author: "Antoine de Saint-Exupéry", cover: "elprincipito")
+                    Book(title: "The Little Prince", author: "Antoine de Saint-Exupéry", cover: "elprincipito", category: "Top Charts")
     )
 }
 

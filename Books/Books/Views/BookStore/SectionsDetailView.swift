@@ -18,6 +18,14 @@ struct SectionsDetailView: View {
     
     @State private var selectedBook: Book?
     
+    var filteredBooks1: [Book] {
+            return BooksViewModel.books1.filter { $0.category == category }
+        }
+
+        var filteredBooks2: [Book] {
+            return BooksViewModel.books2.filter { $0.category == category }
+        }
+    
     var category: String
     
     var body: some View {
@@ -37,7 +45,7 @@ struct SectionsDetailView: View {
             
             ScrollView(.horizontal, showsIndicators: false) {
                 LazyHGrid(rows: [GridItem(.flexible())], spacing: 10) {
-                    ForEach(BooksViewModel.books2) { book in
+                    ForEach(filteredBooks1) { book in
                         Button(action: {
                             selectedBook = book
                         }) {
@@ -90,7 +98,7 @@ struct SectionsDetailView: View {
                 
                 ScrollView(.horizontal, showsIndicators: false) {
                     LazyHGrid(rows: [GridItem(.flexible())], spacing: 10) {
-                        ForEach(BooksViewModel.books1) { book in
+                        ForEach(filteredBooks2) { book in
                             Button(action: {
                                 selectedBook = book
                             }) {

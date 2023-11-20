@@ -55,6 +55,6 @@ struct NewBooksView: View {
 
 
 #Preview {
-    let book3 = Book(title: "The True Story of Ah Q", author: "Lu Xun", cover: "ahq")
+    let book3 = Book(title: "The True Story of Ah Q", author: "Lu Xun", cover: "ahq", category: "Top Charts")
     return NewBooksView(book3: book3)
 }
