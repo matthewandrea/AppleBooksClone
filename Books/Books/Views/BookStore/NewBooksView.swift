@@ -44,6 +44,7 @@ struct NewBooksView: View {
                             Image(book3.cover)
                                 .resizable()
                                 .scaledToFit()
+                                .cornerRadius(4)
                                 .frame(height: 180)
                         )
                         .frame(width: 360, height: 230)

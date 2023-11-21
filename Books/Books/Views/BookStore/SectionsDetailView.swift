@@ -42,7 +42,7 @@ struct SectionsDetailView: View {
             
             VStack (alignment: .leading) {
                 Text ("New Releases")
-                    .font(Font.custom("Georgia-Bold", size: 22))
+                    .font(Font.custom("Georgia-Bold", size: 21))
                     .padding(.top, 30)
                     .padding(.bottom, 20)
             }
@@ -58,6 +58,7 @@ struct SectionsDetailView: View {
                             Image(book.cover)
                                 .resizable()
                                 .aspectRatio(contentMode: .fill)
+                                .cornerRadius(5)
                                 .frame(height: 320)
                                 .padding(.leading)
                         }
@@ -78,6 +79,7 @@ struct SectionsDetailView: View {
                 } label: {
                     HStack {
                         Text("See All")
+                            .font(.subheadline)
                         
                         Image(systemName: "chevron.forward")
                             .imageScale(.small)
@@ -94,7 +96,7 @@ struct SectionsDetailView: View {
             VStack {
                 VStack (alignment: .leading) {
                     Text ("Have You Read...?")
-                        .font(Font.custom("Georgia-Bold", size: 22))
+                        .font(Font.custom("Georgia-Bold", size: 21))
                         .foregroundColor(Color.white)
                         .padding(.top, 30)
                         .padding(.bottom, 20)
@@ -111,6 +113,7 @@ struct SectionsDetailView: View {
                                 Image(book.cover)
                                     .resizable()
                                     .aspectRatio(contentMode: .fill)
+                                    .cornerRadius(5)
                                     .frame(height: 220)
                                     .padding(.leading)
                             }
@@ -129,7 +132,8 @@ struct SectionsDetailView: View {
                         HStack {
                             Text("See All")
                                 .foregroundColor(.white)
-                            
+                                .font(.subheadline)
+
                             Image(systemName: "chevron.forward")
                                 .imageScale(.small)
                                 .foregroundColor(.gray)

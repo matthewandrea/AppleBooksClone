@@ -31,6 +31,8 @@ struct BookStoreView: View {
                         HStack {
                             Image(systemName: "text.justifyleft")
                                 .imageScale(.large)
+                                .foregroundColor(.gray)
+                            
                             Text("Browse Sections")
                             
                             Spacer()
@@ -81,7 +83,7 @@ struct BookStoreView: View {
                 VStack {
                     VStack (alignment: .leading) {
                         Text ("New & Trending")
-                            .font(Font.custom("Georgia-Bold", size: 22))
+                            .font(Font.custom("Georgia-Bold", size: 21))
                         
                         Text ("Recently released and buzz-y books.")
                             .font(.subheadline)
@@ -102,6 +104,7 @@ struct BookStoreView: View {
                                         .resizable()
                                         .aspectRatio(contentMode: .fill)
                                         .frame(height: 100)
+                                        .cornerRadius(3)
                                         .padding(.leading, 15)
                                 }
                                 .buttonStyle(PlainButtonStyle())
@@ -118,6 +121,7 @@ struct BookStoreView: View {
                                         .resizable()
                                         .aspectRatio(contentMode: .fill)
                                         .frame(height: 100)
+                                        .cornerRadius(3)
                                         .padding(.leading, 15)
                                 }
                                 .buttonStyle(PlainButtonStyle())
@@ -137,6 +141,7 @@ struct BookStoreView: View {
                         } label: {
                             HStack {
                                 Text("See All")
+                                    .font(.subheadline)
                                 
                                 Image(systemName: "chevron.forward")
                                     .imageScale(.small)
@@ -146,8 +151,8 @@ struct BookStoreView: View {
                             }
                         }
                         .padding(.horizontal)
-                        .padding(.top)
-                        .padding(.bottom, 30)
+                        .padding(.top, 10)
+                        .padding(.bottom, 40)
                     }
                 }
                 .background(

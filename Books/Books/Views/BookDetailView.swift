@@ -36,6 +36,7 @@ struct BookDetailView: View {
                 Image("\(book.cover)")
                     .resizable()
                     .scaledToFit()
+                    .cornerRadius(5)
                     .frame(height: 390)
                     .padding(.bottom, 10)
                 
