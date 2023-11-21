@@ -57,7 +57,7 @@ struct BookStoreView: View {
                             .buttonStyle(PlainButtonStyle())
                         }
                     }
-                    .padding(.leading, 15)
+                    .padding(.horizontal, 15)
                     .padding(.bottom, 30)
                 }
                 .background(
@@ -95,7 +95,7 @@ struct BookStoreView: View {
                     .padding(.top, 30)
                     
                     ScrollView(.horizontal, showsIndicators: false) {
-                        LazyHGrid(rows: [GridItem(.flexible())], spacing: 5) {
+                        LazyHGrid(rows: [GridItem(.flexible())], spacing: 1) {
                             ForEach(BooksViewModel.books1) { book in
                                 Button(action: {
                                     selectedBook = book
@@ -105,14 +105,15 @@ struct BookStoreView: View {
                                         .aspectRatio(contentMode: .fill)
                                         .frame(height: 100)
                                         .cornerRadius(3)
-                                        .padding(.leading, 15)
+                                        .padding(.horizontal, 15)
                                 }
                                 .buttonStyle(PlainButtonStyle())
                             }
                         }
                         .frame(maxHeight: 110)
+                        .padding(.bottom, 5)
                         
-                        LazyHGrid(rows: [GridItem(.flexible())], spacing: 4) {
+                        LazyHGrid(rows: [GridItem(.flexible())], spacing: 0) {
                             ForEach(BooksViewModel.books2) { book in
                                 Button(action: {
                                     selectedBook = book
@@ -122,7 +123,7 @@ struct BookStoreView: View {
                                         .aspectRatio(contentMode: .fill)
                                         .frame(height: 100)
                                         .cornerRadius(3)
-                                        .padding(.leading, 15)
+                                        .padding(.horizontal, 15)
                                 }
                                 .buttonStyle(PlainButtonStyle())
                             }

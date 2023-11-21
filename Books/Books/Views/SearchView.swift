@@ -43,19 +43,17 @@ struct SearchView: View {
                                 Image(book.cover)
                                     .resizable()
                                     .aspectRatio(contentMode: .fit)
+                                    .cornerRadius(3)
                                     .frame(width: 50, height: 50)
                                     .cornerRadius(8)
-                                    .accessibility(label: Text("Cover of \(book.title) by \(book.author)"))
 
                                 VStack(alignment: .leading) {
                                     Text(book.title)
                                         .font(.subheadline)
                                         .fontWeight(.bold)
-                                        .accessibility(label: Text("Title: \(book.title)"))
 
                                     Text(book.author)
                                         .font(.subheadline)
-                                        .accessibility(label: Text("Author: \(book.author)"))
                                 }
                                 .padding(.leading, 10)
 
@@ -71,8 +69,6 @@ struct SearchView: View {
                                     .padding(.horizontal, 20)
                                     .background(colorScheme == .dark ? Color.white.opacity(0.2) : Color.gray.opacity(0.1))
                                     .cornerRadius(40)
-                                    .accessibility(label: Text("Get this book"))
-
                                 }
                                 .padding(.leading, 5)
                             }

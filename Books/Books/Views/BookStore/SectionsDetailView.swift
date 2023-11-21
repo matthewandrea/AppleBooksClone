@@ -50,7 +50,7 @@ struct SectionsDetailView: View {
             .padding(.horizontal)
             
             ScrollView(.horizontal, showsIndicators: false) {
-                LazyHGrid(rows: [GridItem(.flexible())], spacing: 10) {
+                LazyHGrid(rows: [GridItem(.flexible())], spacing: 0) {
                     ForEach(filteredBooks1 + filteredBooks4) { book in
                         Button(action: {
                             selectedBook = book
@@ -60,7 +60,7 @@ struct SectionsDetailView: View {
                                 .aspectRatio(contentMode: .fill)
                                 .cornerRadius(5)
                                 .frame(height: 320)
-                                .padding(.leading)
+                                .padding(.horizontal)
                         }
                         .buttonStyle(PlainButtonStyle())
                     }
@@ -105,7 +105,7 @@ struct SectionsDetailView: View {
                 .padding(.horizontal)
                 
                 ScrollView(.horizontal, showsIndicators: false) {
-                    LazyHGrid(rows: [GridItem(.flexible())], spacing: 10) {
+                    LazyHGrid(rows: [GridItem(.flexible())], spacing: 0) {
                         ForEach(filteredBooksHaveYouRead) { book in
                             Button(action: {
                                 selectedBook = book
@@ -115,7 +115,7 @@ struct SectionsDetailView: View {
                                     .aspectRatio(contentMode: .fill)
                                     .cornerRadius(5)
                                     .frame(height: 220)
-                                    .padding(.leading)
+                                    .padding(.horizontal)
                             }
                             .buttonStyle(PlainButtonStyle())
                         }
