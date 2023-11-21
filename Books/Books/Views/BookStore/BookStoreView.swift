@@ -109,7 +109,7 @@ struct BookStoreView: View {
                         }
                         .frame(maxHeight: 110)
                         
-                        LazyHGrid(rows: [GridItem(.flexible())], spacing: 3) {
+                        LazyHGrid(rows: [GridItem(.flexible())], spacing: 4) {
                             ForEach(BooksViewModel.books2) { book in
                                 Button(action: {
                                     selectedBook = book

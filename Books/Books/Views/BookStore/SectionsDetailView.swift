@@ -24,12 +24,12 @@ struct SectionsDetailView: View {
         return BooksViewModel.books1.filter { $0.categories.contains(category) }
     }
     
-    var filteredBooks2: [Book] {
-        return BooksViewModel.books2.filter { $0.categories.contains(category) }
+    var filteredBooks4: [Book] {
+        return BooksViewModel.books4.filter { $0.categories.contains(category) }
     }
     
-    var filteredBooks3: [Book] {
-        return BooksViewModel.books3.filter { $0.categories.contains(category) }
+    var filteredBooksHaveYouRead: [Book] {
+        return BooksViewModel.books2.filter { $0.categories.contains(category) } + BooksViewModel.books3.filter { $0.categories.contains(category) } + BooksViewModel.books5.filter { $0.categories.contains(category) } + BooksViewModel.books1.filter { $0.categories.contains(category) } + BooksViewModel.books4.filter { $0.categories.contains(category) }
     }
     
     var category: String
@@ -51,7 +51,7 @@ struct SectionsDetailView: View {
             
             ScrollView(.horizontal, showsIndicators: false) {
                 LazyHGrid(rows: [GridItem(.flexible())], spacing: 10) {
-                    ForEach(filteredBooks1) { book in
+                    ForEach(filteredBooks1 + filteredBooks4) { book in
                         Button(action: {
                             selectedBook = book
                         }) {
@@ -104,7 +104,7 @@ struct SectionsDetailView: View {
                 
                 ScrollView(.horizontal, showsIndicators: false) {
                     LazyHGrid(rows: [GridItem(.flexible())], spacing: 10) {
-                        ForEach(filteredBooks2 + filteredBooks3) { book in
+                        ForEach(filteredBooksHaveYouRead) { book in
                             Button(action: {
                                 selectedBook = book
                             }) {
