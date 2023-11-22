@@ -48,6 +48,7 @@ struct NewBooksView: View {
                                 .frame(height: 180)
                         )
                         .frame(width: 360, height: 230)
+                        .accessibilityLabel("Cover of \(book3.title)")
                 }
             }
         }
