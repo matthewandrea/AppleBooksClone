@@ -28,6 +28,8 @@ struct BookDetailView: View {
                         .font(.system(size: 20))
                         .foregroundColor(.secondary)
                 }
+                .accessibilityLabel("Close the page")
+                .accessibilityHint("Double tap to close the page")
             }
             .padding(.top, 20)
             .padding(.trailing)
@@ -40,9 +42,13 @@ struct BookDetailView: View {
                         .cornerRadius(5)
                         .frame(height: 390)
                         .padding(.bottom, 10)
+                        .accessibilityRemoveTraits(.isImage)
+                        .accessibilityLabel("Cover of \(book.title)")
                     
                     Text("\(book.title)")
                         .font(Font.custom("Georgia-Bold", size: 22))
+                        .accessibilityLabel("Title: \(book.title)")
+                        .accessibilityAddTraits(.isHeader)
                     
                     Button {
                         // No action
@@ -54,6 +60,9 @@ struct BookDetailView: View {
                                 .imageScale(.small)
                                 .foregroundColor(.gray)
                         }
+                        .accessibilityElement(children: .combine)
+                        .accessibilityLabel("Author: \(book.author)")
+                        .accessibilityHint("Double tap to explore the author's page")
                     }
                     
                     HStack {
@@ -72,6 +81,8 @@ struct BookDetailView: View {
                                 .font(.system(size: 10))
                                 .foregroundColor(.gray)
                         }
+                        .accessibilityElement(children: .combine)
+                        .accessibilityLabel("Book rating: 4 stars, based on 698 ratings")
                         
                         Spacer()
                         
@@ -81,6 +92,8 @@ struct BookDetailView: View {
                             }) {
                                 Image(systemName: "app.gift.fill")
                                     .font(.system(size: 27))
+                                    .accessibilityLabel("Gift")
+                                    .accessibilityHint("Double tap to give this book to someone else")
                             }
                             
                             Button(action: {
@@ -88,6 +101,8 @@ struct BookDetailView: View {
                             }) {
                                 Image(systemName: "ellipsis.circle.fill")
                                     .font(.system(size: 27))
+                                    .accessibilityLabel("More action")
+                                    .accessibilityHint("Double tap to explore other available actions")
                             }
                         }
                     }
@@ -105,6 +120,8 @@ struct BookDetailView: View {
                             .frame(maxWidth: .infinity)
                             .background(colorScheme == .dark ? Color.white.opacity(0.2) : Color.black)
                             .cornerRadius(40)
+                            .accessibilityLabel("Get")
+                            .accessibilityHint("Double tap to download the book")
                     }
                     .padding(.horizontal)
                     
@@ -121,6 +138,8 @@ struct BookDetailView: View {
                                     .fontWeight(.bold)
                                     .padding(.vertical, 13)
                                     .padding(.trailing)
+                                    .accessibilityLabel("Want to read")
+                                    .accessibilityHint("Double tap to read the book")
                             }
                             .frame(maxWidth: 180)
                             .overlay(
@@ -141,6 +160,8 @@ struct BookDetailView: View {
                                     .fontWeight(.bold)
                                     .padding(.vertical, 13)
                                     .padding(.trailing)
+                                    .accessibilityLabel("Sample")
+                                    .accessibilityHint("Double tap to download a sample of the book")
                             }
                             .frame(maxWidth: 140)
                             .overlay(
@@ -167,6 +188,8 @@ struct BookDetailView: View {
                         Text ("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eleifend ut odio eu faucibus. Fusce accumsan velit mi, efficitur volutpat purus rutrum a. Sed imperdiet mollis volutpat. In tristique dapibus augue, vel fringilla felis vulputate id. Maecenas maximus at nunc non vestibulum. Cras lobortis lorem eu lectus ultricies consectetur. Mauris malesuada posuere odio, sit amet aliquam dui convallis commodo. Quisque laoreet cursus varius. Nulla at enim metus. Vestibulum enim justo, fermentum scelerisque auctor et, vestibulum ut ante. In hac habitasse platea dictumst. Curabitur dictum metus sem, sed vulputate erat auctor imperdiet. Phasellus pulvinar justo leo, sit amet dignissim ex ultricies eu.")
                             .font(.subheadline)
                     }
+                    .accessibilityElement(children: .combine)
+                    .accessibilityLabel("Publisher Description: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi eleifend ut odio eu faucibus. Fusce accumsan velit mi, efficitur volutpat purus rutrum a. Sed imperdiet mollis volutpat. In tristique dapibus augue, vel fringilla felis vulputate id. Maecenas maximus at nunc non vestibulum. Cras lobortis lorem eu lectus ultricies consectetur. Mauris malesuada posuere odio, sit amet aliquam dui convallis commodo. Quisque laoreet cursus varius. Nulla at enim metus. Vestibulum enim justo, fermentum scelerisque auctor et, vestibulum ut ante. In hac habitasse platea dictumst. Curabitur dictum metus sem, sed vulputate erat auctor imperdiet. Phasellus pulvinar justo leo, sit amet dignissim ex ultricies eu.")
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.horizontal)
                     .padding(.top, 20)

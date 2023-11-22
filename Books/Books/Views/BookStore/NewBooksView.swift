@@ -22,16 +22,21 @@ struct NewBooksView: View {
                     Text("NEW")
                         .font(.caption2)
                         .fontWeight(.bold)
-                        .frame(maxWidth: .infinity, alignment: .leading)                    
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                        .accessibilityLabel("New book")
+                    
                     Text(book3.title)
                         .font(Font.custom("Georgia-Bold", size: 22))
                         .frame(maxWidth: .infinity, alignment: .leading)
+                        .accessibilityLabel("Title: \(book3.title)")
                     
                     Text(book3.author)
                         .font(Font.custom("Georgia-Normal", size: 20))
                         .foregroundColor(.gray)
                         .padding(.bottom)
                         .frame(maxWidth: .infinity, alignment: .leading)
+                        .accessibilityLabel("Author: \(book3.author)")
+                        .accessibilityHint("Double tap to see the details or read the book or swipe horizontally with three fingers to explore more books")
                 }
                 .padding(.top, 30)
                 
@@ -45,9 +50,11 @@ struct NewBooksView: View {
                                 .scaledToFit()
                                 .cornerRadius(4)
                                 .frame(height: 180)
+                                .accessibilityRemoveTraits(.isImage)
                         )
                         .frame(width: 360, height: 230)
                 }
+               .accessibilityHidden(true)
             }
         }
     }

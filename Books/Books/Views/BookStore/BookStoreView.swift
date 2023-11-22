@@ -41,6 +41,9 @@ struct BookStoreView: View {
                                 .imageScale(.small)
                                 .foregroundColor(.gray)
                         }
+                        .accessibilityElement(children: .combine)
+                        .accessibilityLabel("Browse Sections")
+                        .accessibilityHint("Double tap to explore the browse sections")
                     }
                     .padding(.horizontal)
                     .padding(.vertical, 5)
@@ -84,11 +87,13 @@ struct BookStoreView: View {
                     VStack (alignment: .leading) {
                         Text ("New & Trending")
                             .font(Font.custom("Georgia-Bold", size: 21))
+                            .accessibilityLabel("New & Trending section")
                         
                         Text ("Recently released and buzz-y books.")
                             .font(.subheadline)
                             .foregroundColor(.gray)
                             .padding(.bottom)
+                            .accessibilityLabel("These are the Recently released and buzz-y books")
                     }
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .padding(.horizontal)
@@ -106,6 +111,8 @@ struct BookStoreView: View {
                                         .frame(height: 100)
                                         .cornerRadius(3)
                                         .padding(.horizontal, 15)
+                                        .accessibilityLabel("Cover of \(book.title)")
+                                        .accessibilityHint("Double tap to see the details or read the book or swipe horizontally with three fingers to explore more books")
                                 }
                                 .buttonStyle(PlainButtonStyle())
                             }
@@ -124,12 +131,13 @@ struct BookStoreView: View {
                                         .frame(height: 100)
                                         .cornerRadius(3)
                                         .padding(.horizontal, 15)
+                                        .accessibilityLabel("Cover of \(book.title)")
+                                        .accessibilityHint("Double tap to see the details or read the book or swipe horizontally with three fingers to explore more books")
                                 }
                                 .buttonStyle(PlainButtonStyle())
                             }
                         }
                         .frame(maxHeight: 110)
-                        
                     }
                     .padding(.bottom)
                     
@@ -150,6 +158,9 @@ struct BookStoreView: View {
                                 
                                 Spacer()
                             }
+                            .accessibilityElement(children: .combine)
+                            .accessibilityLabel("See All")
+                            .accessibilityHint("Double tap to see all books")
                         }
                         .padding(.horizontal)
                         .padding(.top, 10)

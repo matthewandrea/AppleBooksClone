@@ -45,6 +45,7 @@ struct SectionsDetailView: View {
                     .font(Font.custom("Georgia-Bold", size: 21))
                     .padding(.top, 30)
                     .padding(.bottom, 20)
+                    .accessibilityLabel("New released books")
             }
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.horizontal)
@@ -61,6 +62,8 @@ struct SectionsDetailView: View {
                                 .cornerRadius(5)
                                 .frame(height: 320)
                                 .padding(.horizontal)
+                                .accessibilityLabel("Cover of \(book.title)")
+                                .accessibilityHint("Double tap to see the details or read the book or swipe horizontally with three fingers to explore more books")
                         }
                         .buttonStyle(PlainButtonStyle())
                     }
@@ -87,6 +90,9 @@ struct SectionsDetailView: View {
                         
                         Spacer()
                     }
+                    .accessibilityElement(children: .combine)
+                    .accessibilityLabel("See All")
+                    .accessibilityHint("Double tap to see all books")
                 }
                 .padding(.horizontal)
                 .padding(.top)
@@ -100,6 +106,7 @@ struct SectionsDetailView: View {
                         .foregroundColor(Color.white)
                         .padding(.top, 30)
                         .padding(.bottom, 20)
+                        .accessibilityLabel("Have you read these books?")
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.horizontal)
@@ -116,6 +123,8 @@ struct SectionsDetailView: View {
                                     .cornerRadius(5)
                                     .frame(height: 220)
                                     .padding(.horizontal)
+                                    .accessibilityLabel("Cover of \(book.title)")
+                                    .accessibilityHint("Double tap to see the details or read the book or swipe horizontally with three fingers to explore more books")
                             }
                             .buttonStyle(PlainButtonStyle())
                         }
@@ -140,6 +149,9 @@ struct SectionsDetailView: View {
                             
                             Spacer()
                         }
+                        .accessibilityElement(children: .combine)
+                        .accessibilityLabel("See All")
+                        .accessibilityHint("Double tap to see all books")
                     }
                     .padding(.horizontal)
                     .padding(.top)

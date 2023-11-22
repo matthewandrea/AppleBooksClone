@@ -20,7 +20,6 @@ struct BrowseSectionsView: View {
     
     var body: some View {
         
-        NavigationStack {
             List {
                 ForEach(viewModel.sections.prefix(2)) { section in
                     NavigationLink(destination: SectionsDetailView(category: section.category)) {
@@ -39,6 +38,7 @@ struct BrowseSectionsView: View {
                     .fontWeight(.bold)
                     .foregroundColor(.gray)
                     .padding(.vertical, 10)
+                    .accessibilityLabel("Genres list")
                 
                 ForEach(viewModel.sections.dropFirst(2)) { section in
                     NavigationLink(destination: SectionsDetailView(category: section.category)) {
@@ -67,11 +67,14 @@ struct BrowseSectionsView: View {
                 }
             }
             )
-        }
         .navigationTitle("Browse Sections")
     }
 }
 
-#Preview {
-    BrowseSectionsView()
+struct BrowseSectionsView_Previews: PreviewProvider {
+    static var previews: some View {
+        NavigationView {
+            BrowseSectionsView()
+        }
+    }
 }
