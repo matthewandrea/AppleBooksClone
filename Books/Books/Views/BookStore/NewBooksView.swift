@@ -22,8 +22,7 @@ struct NewBooksView: View {
                     Text("NEW")
                         .font(.caption2)
                         .fontWeight(.bold)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                    
+                        .frame(maxWidth: .infinity, alignment: .leading)                    
                     Text(book3.title)
                         .font(Font.custom("Georgia-Bold", size: 22))
                         .frame(maxWidth: .infinity, alignment: .leading)
@@ -48,7 +47,6 @@ struct NewBooksView: View {
                                 .frame(height: 180)
                         )
                         .frame(width: 360, height: 230)
-                        .accessibilityLabel("Cover of \(book3.title)")
                 }
             }
         }
